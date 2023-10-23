@@ -29,3 +29,9 @@ def greet(name):
 
 # Function call
 greet("Alice")
+
+# Some keywords in Python are reserved and cannot be used as variable names.
+# For example, the following variable names are invalid:
+# and, as, assert, break, class, continue, def, del, elif, else, except, False, finally, for, from, global, if, import,
+# in, is, lambda, None, nonlocal, not, or, pass, raise, return, True, try, while, with, yield
+# You can find a complete list of reserved keywords here: https://docs.python.org/3/reference/lexical_analysis.html#keywords
