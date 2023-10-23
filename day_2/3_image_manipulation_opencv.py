@@ -1,4 +1,6 @@
 # Basics of Image Manipulation with OpenCV
+# https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html
+# Core Operations -> basic Operations on Images
 
 # Step 1: Install OpenCV
 # If you haven't already, you can install OpenCV using pip:
@@ -8,7 +10,7 @@
 import cv2
 
 # Step 3: Load an image
-image_path = "example.jpg"  # Replace with the path to your image
+image_path = "imgs/IHC.png"  # Replace with the path to your image
 img = cv2.imread(image_path)
 
 # Step 4: Display basic image properties

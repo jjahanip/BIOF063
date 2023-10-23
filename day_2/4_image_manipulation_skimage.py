@@ -1,4 +1,5 @@
 # Basics of Image Manipulation with scikit-image (skimage)
+# https://scikit-image.org/docs/stable/user_guide/getting_started.html
 
 # Step 1: Install scikit-image
 # If you haven't already, you can install scikit-image using pip:
@@ -8,9 +9,10 @@
 import skimage.io as io
 import skimage.color as color
 from skimage.transform import resize, rotate
+from skimage.util import img_as_ubyte
 
 # Step 3: Load an image
-image_path = "example.jpg"  # Replace with the path to your image
+image_path = "imgs/IHC.png"  # Replace with the path to your image
 img = io.imread(image_path)
 
 # Step 4: Display basic image properties
@@ -23,12 +25,14 @@ io.show()
 
 # Step 6: Convert the image to grayscale
 img_gray = color.rgb2gray(img)
+img_gray = img_as_ubyte(img_gray)    # Convert to uint8 because skimgae uses float64 by default
 io.imshow(img_gray, cmap='gray')
 io.show()
 
 # Step 7: Resize the image
 new_size = (200, 200)
 img_resized = resize(img, new_size, anti_aliasing=True)
+img_resized = img_as_ubyte(img_resized)  # Convert to uint8 because skimgae uses float64 by default
 io.imshow(img_resized)
 io.show()
 
@@ -41,12 +45,13 @@ io.show()
 # Step 9: Rotate the image
 angle = 45  # Rotate by 45 degrees
 img_rotated = rotate(img, angle, resize=True)
+img_rotated = img_as_ubyte(img_rotated)  # Convert to uint8 because skimgae uses float64 by default
 io.imshow(img_rotated)
 io.show()
 
-# Step 10: Save the modified image (if needed)
-# Note: skimage does not provide a built-in save function, so you may need to use other libraries for saving images.
+# Step 10: Save the modified image
 
-# If you need to save the modified images, you can use the io.imsave function from skimage.
-# io.imsave("grayscale_image.jpg", img_gray)
-# io.imsave("resized_image.jpg", img_res
+io.imsave("grayscale_image.png", img_gray)
+io.imsave("resized_image.jpg", img_resized)
+io.imsave("cropped_image.jpg", img_cropped)
+io.imsave("rotated_image.jpg", img_rotated)

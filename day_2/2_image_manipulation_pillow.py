@@ -1,4 +1,5 @@
 # Basics of Image Manipulation with Pillow (PIL)
+# https://pillow.readthedocs.io/en/stable/handbook/tutorial.html
 
 # Step 1: Install Pillow
 # If you haven't already, you can install Pillow using pip:
@@ -8,7 +9,7 @@
 from PIL import Image
 
 # Step 3: Open an image
-image_path = "example.jpg"  # Replace with the path to your image
+image_path = "imgs/IHC.png"  # Replace with the path to your image
 img = Image.open(image_path)
 
 # Step 4: Display basic image properties
