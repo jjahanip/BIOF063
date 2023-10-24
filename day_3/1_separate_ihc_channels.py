@@ -36,3 +36,4 @@ for a in ax.ravel():
     a.axis('off')
 
 fig.tight_layout()
+plt.show()
